@@ -26,7 +26,6 @@ const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
   const [dataArray, setDataArray] = useState([
     {name: '', email: '', password: ''},
-    {name: '', email: '', password: ''},
   ]);
   const [isSecure, setIsSecure] = useState(true);
   const [refresh, setRefresh] = useState(true);
@@ -46,7 +45,7 @@ const App: () => Node = () => {
   }
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={styles.headerView}>
         <TouchableOpacity
@@ -162,6 +161,10 @@ const App: () => Node = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
   mainView: {
     width: '80%',
     alignSelf: 'center',
